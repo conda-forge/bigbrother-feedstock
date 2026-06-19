@@ -1,0 +1,45 @@
+context:
+  name: bigbrother
+  version: "0.1.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: fcde068a71605e209197405759086e496357f6203a49f3dbebaa64dd4ec26151
+
+build:
+  number: 0
+  noarch: python
+  script: python -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling
+  run:
+    - python >=${{ python_min }}
+    - pydantic
+
+tests:
+  - python:
+      imports:
+        - bigbrother
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: A library for object observability
+  homepage: http://github.com/timkpaine/bigbrother
+  repository: http://github.com/timkpaine/bigbrother
+
+extra:
+  recipe-maintainers:
+    - timkpaine
