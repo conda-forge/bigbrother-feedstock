@@ -9,9 +9,7 @@ Package license: Apache-2.0
 
 Summary: A library for object observability
 
-Development: https://github.com/timkpaine/bigbrother
-
-A library for object observability
+Development: http://github.com/timkpaine/bigbrother
 
 Current build status
 ====================
