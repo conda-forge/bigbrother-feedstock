@@ -1,6 +1,6 @@
 context:
   name: bigbrother
-  version: "0.1.4"
+  version: "0.1.5"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: fcde068a71605e209197405759086e496357f6203a49f3dbebaa64dd4ec26151
+  sha256: 84b06ce63c4ed1b6eb470ec1c385bafd6f7b0e18147e980a2fe5536b14b5cda3
 
 build:
   number: 0
